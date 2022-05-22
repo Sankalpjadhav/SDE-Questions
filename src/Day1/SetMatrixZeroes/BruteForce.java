@@ -18,6 +18,9 @@ Matrix after setting Zero:
 0 0 0 0
 0 4 5 0
 0 3 1 0
+
+Time complexity: O(n*m) * O(n+m)
+Space complexity : O(1)
  */
 public class BruteForce {
     public static void main(String[] args) {
