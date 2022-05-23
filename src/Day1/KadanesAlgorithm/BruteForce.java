@@ -18,10 +18,10 @@ public class BruteForce {
         for(int i=0;i<n;i++){
             arr[i] = sc.nextInt();
         }
-        System.out.println("Maximum sub-array sum: "+kadanesAlgorithm(arr, n));
+        System.out.println("Maximum sub-array sum: "+maxSubarray(arr, n));
     }
 
-    private static int kadanesAlgorithm(int [] arr, int n){
+    private static int maxSubarray(int [] arr, int n){
         if(arr.length==1){
             return arr[0];
         }
