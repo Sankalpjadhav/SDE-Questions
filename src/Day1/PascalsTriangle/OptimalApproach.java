@@ -33,8 +33,7 @@ public class OptimalApproach {
             previousRow = currentRow;
             currentRow = new ArrayList<>();
             for(int j=0;j<=i;j++){
-                if(j==0 || j==i){
-                    currentRow.add(1);
+                if(j==0 || j==i){                  currentRow.add(1);
                 }
                 else{
                     currentRow.add(previousRow.get(j) + previousRow.get(j-1));
