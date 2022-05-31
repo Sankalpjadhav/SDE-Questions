@@ -30,7 +30,7 @@ Target: 28
 
 Output: Not found
 
-Time complexity: O(n * logn) Applying binary search on whole 2D matrix at once
+Time complexity: O(log n*m ) Applying binary search on whole 2D matrix at once
 Space complexity: O(1) Not using extra space
  */
 public class OptimalApproach {
