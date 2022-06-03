@@ -25,7 +25,7 @@ Output:
 Majority element 1 = 1
 Majority element 2 = -1
 
-Time complexity : O(n) : Traversing arr only once
+Time complexity : O(n) : Traversing arr only once using Boyer Moore Voting Algo
 Space complexity : O(1) : Not using extra space
  */
 public class OptimalApproach {
