@@ -1,4 +1,4 @@
-package Day4.TwoSum.FourSum;
+package Day4.FourSum;
 
 import java.util.ArrayList;
 import java.util.Arrays;
