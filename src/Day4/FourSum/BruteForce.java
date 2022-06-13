@@ -33,16 +33,16 @@ public class BruteForce {
         }
         int target = sc.nextInt();
 
-        ArrayList<Quadruples> quads = getQuadruplets(nums, n, target);
+        ArrayList<ArrayList<Integer>> quads = getQuadruplets(nums, n, target);
 
         System.out.println("Quadruplets: ");
-        for(Quadruples quad: quads){
-            System.out.println("["+quad.numOne+", "+quad.numTwo+", "+quad.numThree+", "+quad.numFour+"]");
+        for(ArrayList quad: quads){
+            System.out.println("["+quad.get(0)+", "+quad.get(1)+", "+quad.get(2)+", "+quad.get(3)+"]");
         }
     }
 
-    private static ArrayList<Quadruples> getQuadruplets(int [] nums, int n, int target){
-        ArrayList<Quadruples> quads = new ArrayList<>();
+    private static ArrayList<ArrayList<Integer>> getQuadruplets(int [] nums, int n, int target){
+        ArrayList<ArrayList<Integer>> quads = new ArrayList<>();
 
         Arrays.sort(nums);
 
@@ -60,7 +60,12 @@ public class BruteForce {
                     while(left <= right){
                         int mid = (left+right)/2;
                         if(nums[mid] == remainingTarget){
-                            quads.add(new Quadruples(nums[i], nums[j], nums[k], nums[mid]));
+                            ArrayList<Integer> quad = new ArrayList<>();
+                            quad.add(nums[i]);
+                            quad.add(nums[j]);
+                            quad.add(nums[k]);
+                            quad.add(nums[mid]);
+                            quads.add(quad);
                             break;
                         }
                         else if(nums[mid] < remainingTarget){
@@ -75,19 +80,5 @@ public class BruteForce {
         }
 
         return quads;
-    }
-}
-
-class Quadruples{
-    int numOne;
-    int numTwo;
-    int numThree;
-    int numFour;
-
-    public Quadruples(int numOne, int numTwo, int numThree, int numFour){
-        this.numOne = numOne;
-        this.numTwo = numTwo;
-        this.numThree = numThree;
-        this.numFour = numFour;
     }
 }
