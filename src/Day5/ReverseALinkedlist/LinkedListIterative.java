@@ -17,7 +17,7 @@ Time complexity: O(n) : Traversing linkedlist linearly
 Space complexity: O(1) : Not using any extra space.
  */
 public class LinkedListIterative {
-    Node head;
+    private static Node head;
 
     static class Node{
         int data;
