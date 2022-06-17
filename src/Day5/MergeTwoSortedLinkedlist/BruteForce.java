@@ -36,7 +36,7 @@ Merged Linkedlist:
 Time complexity: O(numberOfNodesOfLinkedlist1 + numberOfNodesOfLinkedlist2) - We are traversing two linkedlist.
 Space complexity: O(numberOfNodesOfLinkedlist1 + numberOfNodesOfLinkedlist2) - We are creating new nodes.
  */
-public class MergeTwoSortedLinkedlist {
+public class BruteForce {
     static Node head1;
     static Node head2;
 
