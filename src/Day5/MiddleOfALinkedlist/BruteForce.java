@@ -52,7 +52,6 @@ public class BruteForce {
     public static void main(String [] args){
         Scanner sc = new Scanner(System.in);
         int numberOfNodes = sc.nextInt();
-        //BruteForce list = new BruteForce();
         head = new Node(sc.nextInt());
         Node pointer = head;
         while(numberOfNodes > 1){
