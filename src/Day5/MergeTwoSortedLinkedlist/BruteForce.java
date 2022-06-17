@@ -100,6 +100,9 @@ public class BruteForce {
     }
 
     private static Node addElements(int numberOfElements){
+        if(numberOfElements == 0){
+            return null;
+        }
         Scanner sc  = new Scanner(System.in);
         Node head = new Node(sc.nextInt());
         Node current = head;
