@@ -21,10 +21,8 @@ Output:
 Array after remaining duplicate elements:
 1 2
 
-Time complexity: O(nlogn) + O(n)
-O(nlogn) - for traversing entire array to add elements into TreeSet(O(n)). Also, adding operation in TreeSet takes O(logn) time
-O(n) - To add again elements in array from TreeSet.
-Space complexity: O(n) - Making use of TreeSet to store elements.
+Time complexity: O(n) - Traversing array elements only once
+Space complexity: O(1) - Not using any extra space
  */
 public class OptimalApproach {
     public static void main(String[] args) {
