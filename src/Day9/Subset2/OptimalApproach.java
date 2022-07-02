@@ -1,9 +1,8 @@
 package Day9.Subset2;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Set;
 /*
 Nums array may contain duplicate.
 NOTE: Solution must not have duplicates.
@@ -23,11 +22,10 @@ Enter elements:
 Subsets:
 [1, 2, 2][1][2, 2][2][][1, 2]
 
-Time complexity: O(2^N log 2^N) or O(2^N log 2^N) + O(N)
-O(2^N log 2^N) - Recursion + Adding elements into set
-O(N) - when interviewer asks us to convert it to ArrayList<ArrayList> instead of Set<ArrayList>
+Time complexity: Overall O(k * 2^n)
+O(2^n) for generating every subset and O(k)  to insert every subset in another data structure if the average length of every subset is k.
 
-Space complexity: O(2^N) : It has 2^N subsets if there are no duplicates.
+Space complexity: O(2^N * k) : to store every subset of average length k. Auxiliary space is O(n)  if n is the depth of the recursion tree.
  */
 public class OptimalApproach {
     public static void main(String[] args) {
@@ -39,7 +37,8 @@ public class OptimalApproach {
         for(int i=0;i<n;i++){
             nums[i] = sc.nextInt();
         }
-        Set<ArrayList<Integer>> subsets = new HashSet<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> subsets = new ArrayList<>();
+        Arrays.sort(nums);
         getSubsets(0, new ArrayList<Integer>(), nums, subsets);
         System.out.println("Subsets: ");
         for(ArrayList<Integer> subset:subsets){
@@ -47,7 +46,14 @@ public class OptimalApproach {
         }
     }
 
-    private static void getSubsets(int index, ArrayList<Integer> subset, int [] nums, Set<ArrayList<Integer>> subsets){
+    private static void getSubsets(int index, ArrayList<Integer> subset, int [] nums, ArrayList<ArrayList<Integer>> subsets){
+        subsets.add(new ArrayList<>(subset));
 
+        for(int i=index;i<nums.length;i++){
+            if(i!=index && nums[i]==nums[i-1]) continue;
+            subset.add(nums[i]);
+            getSubsets(i+1, subset, nums, subsets);
+            subset.remove(subset.size()-1);
+        }
     }
 }
