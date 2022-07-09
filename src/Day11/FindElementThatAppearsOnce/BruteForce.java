@@ -11,6 +11,14 @@ Enter elements:
 Output:
 The element that appears once: 2
 
+Input:
+Enter number of elements of a sorted array:
+9
+Enter elements:
+1 1 3 3 4 4 5 5 6
+Output:
+The element that appears once: 6
+
 Time complexity: O(n)
 We are using property of XOR that when we XOR two same elements, we get 0. So if we XOR all elements of sorted array then we get element which appears once.
 Space complexity: O(1) - Not using extra space.
