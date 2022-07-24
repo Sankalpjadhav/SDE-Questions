@@ -38,7 +38,7 @@ Enter all the edges:
 9 10
 Output: Cycle not detected...
 
-Time complexity: O(N+E)- Just applying BFS algorithm
+Time complexity: O(N+E)- Just applying DFS algorithm
 N is time taken for visiting N nodes
 E is for traversing through adjacent nodes overall
 
